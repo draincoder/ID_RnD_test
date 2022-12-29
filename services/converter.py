@@ -18,7 +18,7 @@ def find_face(filename: str):
     try:
         flag = False
         img = cv2.imread(f'photos/{filename}')
-        face_cascade_db = cv2.CascadeClassifier('data')
+        face_cascade_db = cv2.CascadeClassifier('data.xml')
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = face_cascade_db.detectMultiScale(img_gray, 1.1, 18)
         for (x, y, w, h) in faces:
